@@ -8,14 +8,14 @@ namespace WiredBrainCoffee
   {
     static void Main(string[] args)
     {
-      var employeeRepository = new GenericRepository<Employee>();
+      var employeeRepository = new GenericRepositoryWithRemove<Employee>();
 
       employeeRepository.Add(new Employee { FirstName = "Elijah" });
       employeeRepository.Add(new Employee { FirstName = "Mike" });
       employeeRepository.Add(new Employee { FirstName = "Chris" });
       employeeRepository.save();
 
-      var organisationRepository = new GenericRepository<Organization>();
+      var organisationRepository = new GenericRepository<Organization, Guid>();
       organisationRepository.Add(new Organization { Name = "brix ltd" });
       organisationRepository.Add(new Organization { Name = "New org" });
       organisationRepository.save();

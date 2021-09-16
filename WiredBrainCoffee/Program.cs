@@ -15,9 +15,9 @@ namespace WiredBrainCoffee
       employeeRepository.Add(new Employee { FirstName = "Chris" });
       employeeRepository.save();
 
-      var organisationRepository = new GenericRepository<Organizatiom>();
-      organisationRepository.Add(new Organizatiom { Name = "brix ltd" });
-      organisationRepository.Add(new Organizatiom { Name = "New org" });
+      var organisationRepository = new GenericRepository<Organization>();
+      organisationRepository.Add(new Organization { Name = "brix ltd" });
+      organisationRepository.Add(new Organization { Name = "New org" });
       organisationRepository.save();
 
       Console.ReadLine();

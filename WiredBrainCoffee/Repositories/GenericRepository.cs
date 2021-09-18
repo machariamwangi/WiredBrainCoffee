@@ -4,15 +4,19 @@ using WiredBrainCoffee.Entities;
 
 namespace WiredBrainCoffee.Repositories
 {
-  public class GenericRepository<T, Tkey>
+  public class GenericRepository<T>
   {
-    public Tkey? Key { get; set; }
+    //public Tkey? Key { get; set; }
     protected readonly List<T> _items = new();
     public void Add(T item)
     {
       _items.Add(item);
     }
 
+    public void Remove(T item)
+    {
+      _items.Remove(item);
+    }
     public void save()
     {
       foreach (var item in _items)
@@ -22,12 +26,4 @@ namespace WiredBrainCoffee.Repositories
     }
   }
 
-
-  public class GenericRepositoryWithRemove<T> : GenericRepository<T, string>
-  {
-    public void Remove(T item)
-    {
-      _items.Remove(item);
-    }
-  }
 }
